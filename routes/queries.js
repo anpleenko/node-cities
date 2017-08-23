@@ -35,8 +35,24 @@ var connectionString = process.env.DATABASE_URL;
 var db = pgp(connectionString);
 
 // add query functions
-function getAllPuppies(req, res, next) {
+function getAllCountries(req, res, next) {
   db.any('SELECT * FROM country;')
+    .then(function (data) {
+      res.status(200)
+        .json({
+          status: 'success',
+          data: data,
+          message: 'Retrieved ALL puppies'
+        });
+    })
+    .catch(function (err) {
+      return next(err);
+    });
+}
+
+function getSingleCountry(req, res, next) {
+  var countryId = parseInt(req.params.id);
+  db.any('SELECT * FROM country where id = $1;', countryId)
     .then(function (data) {
       res.status(200)
         .json({
@@ -117,7 +133,8 @@ function removePuppy(req, res, next) {
 }
 
 module.exports = {
-  getAllPuppies: getAllPuppies,
+  getAllCountries: getAllCountries,
+  getSingleCountry: getSingleCountry,
   getSinglePuppy: getSinglePuppy,
   createPuppy: createPuppy,
   updatePuppy: updatePuppy,
