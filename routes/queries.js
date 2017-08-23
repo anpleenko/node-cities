@@ -66,6 +66,38 @@ function getSingleCountry(req, res, next) {
     });
 }
 
+
+function getAllCities(req, res, next) {
+  db.any('SELECT * FROM city;')
+    .then(function (data) {
+      res.status(200)
+        .json({
+          status: 'success',
+          data: data,
+          message: 'Retrieved ALL puppies'
+        });
+    })
+    .catch(function (err) {
+      return next(err);
+    });
+}
+
+function getSingleCity(req, res, next) {
+  var countryId = parseInt(req.params.id);
+  db.any('SELECT * FROM city where id = $1;', countryId)
+    .then(function (data) {
+      res.status(200)
+        .json({
+          status: 'success',
+          data: data,
+          message: 'Retrieved ALL puppies'
+        });
+    })
+    .catch(function (err) {
+      return next(err);
+    });
+}
+
 function getSinglePuppy(req, res, next) {
   var pupID = parseInt(req.params.id);
   db.one('select * from pups where id = $1', pupID)
@@ -135,6 +167,10 @@ function removePuppy(req, res, next) {
 module.exports = {
   getAllCountries: getAllCountries,
   getSingleCountry: getSingleCountry,
+
+  getAllCities: getAllCities,
+  getSingleCity: getSingleCity,
+
   getSinglePuppy: getSinglePuppy,
   createPuppy: createPuppy,
   updatePuppy: updatePuppy,
