@@ -38,12 +38,7 @@ var db = pgp(connectionString);
 function getAllCountries(req, res, next) {
   db.any('SELECT * FROM country;')
     .then(function (data) {
-      res.status(200)
-        .json({
-          status: 'success',
-          data: data,
-          message: 'Retrieved ALL puppies'
-        });
+      res.status(200).json(data);
     })
     .catch(function (err) {
       return next(err);
@@ -54,28 +49,17 @@ function getSingleCountry(req, res, next) {
   var countryId = parseInt(req.params.id);
   db.any('SELECT * FROM country where id = $1;', countryId)
     .then(function (data) {
-      res.status(200)
-        .json({
-          status: 'success',
-          data: data,
-          message: 'Retrieved ALL puppies'
-        });
+      res.status(200).json(data);
     })
     .catch(function (err) {
       return next(err);
     });
 }
 
-
 function getAllCities(req, res, next) {
   db.any('SELECT * FROM city;')
     .then(function (data) {
-      res.status(200)
-        .json({
-          status: 'success',
-          data: data,
-          message: 'Retrieved ALL puppies'
-        });
+      res.status(200).json(data);
     })
     .catch(function (err) {
       return next(err);
@@ -83,15 +67,10 @@ function getAllCities(req, res, next) {
 }
 
 function getSingleCity(req, res, next) {
-  var countryId = parseInt(req.params.id);
-  db.any('SELECT * FROM city where id = $1;', countryId)
+  var cityId = parseInt(req.params.id);
+  db.any('SELECT * FROM city where id = $1;', cityId)
     .then(function (data) {
-      res.status(200)
-        .json({
-          status: 'success',
-          data: data,
-          message: 'Retrieved ALL puppies'
-        });
+      res.status(200).json(data);
     })
     .catch(function (err) {
       return next(err);
