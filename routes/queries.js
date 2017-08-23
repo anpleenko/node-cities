@@ -57,7 +57,7 @@ function getSingleCountry(req, res, next) {
 }
 
 function getAllCities(req, res, next) {
-  db.any('SELECT city.name, region.name, region.id FROM city, region WHERE city.region_id = region.id;')
+  db.any('SELECT city.name, region.name, country.name FROM city, region, country WHERE city.region_id = region.id AND region.country_id = country.id LIMIT 200;')
     .then(function (data) {
       res.status(200).json(data);
     })
