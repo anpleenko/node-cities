@@ -1,7 +1,22 @@
+const fs = require('fs');
+const path = require('path');
+const env = require('node-env-file');
 const app = require('./src/app');
 
-const port = process.env.NODE_PORT || 3000;
+const envFile = path.join(__dirname, '.env');
+const envPack = {};
 
+if (fs.existsSync(envFile)) {
+  env(envFile);
+
+  env.lines.variables.map((e) => {
+    envPack[e.split('=')[0]] = e.split('=')[1];
+  });
+
+  console.log(`${Object.keys(envPack).map(e => `\n==> ${e}=${envPack[e]}`)}`);
+}
+
+const port = process.env.NODE_PORT || 3000;
 app.listen(port, (error) => {
   if (error) throw error;
 
