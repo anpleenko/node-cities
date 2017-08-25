@@ -18,7 +18,7 @@ _settings:
 
 db:
 	@echo "==> Download dump file"
-	wget -O dump.sql https://raw.githubusercontent.com/Legostaev/contry_region_city/master/script.sql;
+	curl https://raw.githubusercontent.com/Legostaev/contry_region_city/master/script.sql --output dump.sql
 
 test:
 
@@ -37,7 +37,7 @@ deploy:
 		make _settings; \
 		make db; \
 		docker-compose down; \
-		docker-compose up -d; \
+		docker-compose -f ~/docker-compose.yml up -d --force-recreate; \
 	'
 del:
 	rm -rf .git
