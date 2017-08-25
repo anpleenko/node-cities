@@ -1,6 +1,6 @@
 const app = require('./src/app');
 
-const port = process.env.NODE_PORT;
+const port = process.env.NODE_PORT || 3000;
 
 app.listen(port, (error) => {
   if (error) throw error;
