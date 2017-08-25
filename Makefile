@@ -4,7 +4,9 @@ install:
 deploy:
 	ssh qa@178.76.235.82 ' \
 		cd /home/qa/cities; \
-		git pull; npm i; \
+		git stash -u; \
+		git pull; \
+		npm i; \
 		sudo docker-compose down && sudo docker-compose up -d; \
 	'
 
