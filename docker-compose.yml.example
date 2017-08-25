@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  cities_api:
+    image: node:8
+    container_name: cities_api
+    depends_on:
+      - cities_db
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@cities_db:5432/postgres
+      NODE_ENV: development
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    working_dir: /usr/src/app
+    command: ./node_modules/.bin/nodemon ./bin/www
+
+  cities_db:
+    container_name: cities_db
+    image: postgres:9
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+volumes:
+  cities_db:
