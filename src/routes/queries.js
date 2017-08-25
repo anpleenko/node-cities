@@ -1,52 +1,38 @@
-var promise = require('bluebird');
+const promise = require('bluebird');
 
-var options = {
+const options = {
   // Initialization Options
   promiseLib: promise,
-  connect: (client, dc, isFresh) => {
+
+  connect(client, dc, isFresh) {
     const cp = client.connectionParameters;
     console.log('Connected to database:', cp.database);
   },
-  error: (err, e) => {
-    console.log(err)
-    console.log(e)
 
-    if (e.cn) {
-        // this is a connection-related error
-        // cn = safe connection details passed into the library:
-        //      if password is present, it is masked by #
-    }
-
-    if (e.query) {
-        // query string is available
-        if (e.params) {
-            // query parameters are available
-        }
-    }
-
-    if (e.ctx) {
-        // occurred inside a task or transaction
-    }
-  }
+  error(err, e) {
+    console.log(err);
+    console.log(e);
+  },
 };
 
-var pgp = require('pg-promise')(options);
-var db = pgp(process.env.DATABASE_URL);
+const pgp = require('pg-promise')(options);
+
+const db = pgp(process.env.DATABASE_URL);
 
 // add query functions
 function getAllCountries(req, res, next) {
   db.any('SELECT * FROM country;')
-    .then(function (data) {
+    .then((data) => {
       res.status(200).json(data);
     })
-    .catch(function (err) {
+    .catch((err) => {
       return next(err);
     });
 }
 
 function getSingleCountry(req, res, next) {
   var countryId = parseInt(req.params.id);
-  db.any('SELECT * FROM country where id = $1;', countryId)
+  db.any('SELECT * FROM country WHERE id = $1;', countryId)
     .then(function (data) {
       res.status(200).json(data);
     })
@@ -68,7 +54,7 @@ function getAllCities(req, res, next) {
 
 function getSingleCity(req, res, next) {
   var cityId = parseInt(req.params.id);
-  db.any('SELECT * FROM city where id = $1;', cityId)
+  db.any('SELECT * FROM city WHERE id = $1;', cityId)
     .then(function (data) {
       res.status(200).json(data);
     })
@@ -144,14 +130,14 @@ function removePuppy(req, res, next) {
 }
 
 module.exports = {
-  getAllCountries: getAllCountries,
-  getSingleCountry: getSingleCountry,
+  getAllCountries,
+  getSingleCountry,
 
-  getAllCities: getAllCities,
-  getSingleCity: getSingleCity,
+  getAllCities,
+  getSingleCity,
 
-  getSinglePuppy: getSinglePuppy,
-  createPuppy: createPuppy,
-  updatePuppy: updatePuppy,
-  removePuppy: removePuppy
+  getSinglePuppy,
+  createPuppy,
+  updatePuppy,
+  removePuppy,
 };
