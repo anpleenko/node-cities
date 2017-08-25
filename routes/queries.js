@@ -31,8 +31,7 @@ var options = {
 };
 
 var pgp = require('pg-promise')(options);
-var connectionString = process.env.DATABASE_URL;
-var db = pgp(connectionString);
+var db = pgp(process.env.DATABASE_URL);
 
 // add query functions
 function getAllCountries(req, res, next) {
