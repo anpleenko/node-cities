@@ -8,13 +8,13 @@ services:
       - cities_db
     environment:
       DATABASE_URL: postgres://postgres:postgres@cities_db:5432/postgres
-      NODE_ENV: development
+      NODE_PORT: 3000
     volumes:
       - .:/usr/src/app
     ports:
       - "3000:3000"
     working_dir: /usr/src/app
-    command: ./node_modules/.bin/nodemon ./bin/www
+    command: ./node_modules/.bin/nodemon server
 
   cities_db:
     container_name: cities_db
