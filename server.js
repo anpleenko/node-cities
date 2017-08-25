@@ -6,6 +6,8 @@ const app = require('./src/app');
 const envFile = path.join(__dirname, '.env');
 
 if (fs.existsSync(envFile)) {
+
+  // parse .env file
   env(envFile);
 
   env.lines.variables.map((e) => {

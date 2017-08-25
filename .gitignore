@@ -2,3 +2,4 @@ node_modules/
 db/
 docker-compose.yml
 .env
+dump.sql
