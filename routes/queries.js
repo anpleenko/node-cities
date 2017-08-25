@@ -55,8 +55,9 @@ function getSingleCountry(req, res, next) {
     });
 }
 
+// SELECT city.name as city_name, region.name as region_name, country.name as country_name FROM city, region, country WHERE city.region_id = region.id AND region.country_id = country.id LIMIT 200;
 function getAllCities(req, res, next) {
-  db.any('SELECT city.name as city_name, region.name as region_name, country.name as country_name FROM city, region, country WHERE city.region_id = region.id AND region.country_id = country.id LIMIT 200;')
+  db.any('SELECT * FROM city;')
     .then(function (data) {
       res.status(200).json(data);
     })
