@@ -1,10 +1,15 @@
 default: _requirements _settings db test end
 
-_requirements:
-	@echo "==> Installing requirements"
+_requirements: node_packages docker_images
+
+node_packages:
+	@echo "==> Installing Node packages"
+	npm i
+
+docker_images:
+	@echo "==> Installing Docker images"
 	docker pull node:8
 	docker pull postgres:9
-	npm i
 
 _settings:
 	@echo "==> Emitting local development settings module"
@@ -28,7 +33,7 @@ deploy:
 		cd /home/qa/cities; \
 		git stash -u; \
 		git pull; \
-		make _requirements; \
+		make node_packages; \
 		make _settings; \
 		make db; \
 		docker-compose down; \
