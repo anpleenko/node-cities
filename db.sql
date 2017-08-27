@@ -40,17 +40,17 @@ INSERT INTO subject(user_id, label) VALUES (1, 'НГТР');
 INSERT INTO subject(user_id, label) VALUES (2, 'ЩРПТ');
 INSERT INTO subject(user_id, label) VALUES (2, 'НГРЕ');
 
-SELECT
-  users.id as id,
-  users.name as users_name,
-  users.birthday,
-  array(
-      SELECT subject.label
-      FROM subject
-      WHERE users.id = subject.user_id
-  ) as subjects,
-  department.label as department,
-  department.instructor as instructor
-
-FROM users, department
-WHERE users.department = department.id;
+-- SELECT
+--   users.id as id,
+--   users.name as users_name,
+--   users.birthday,
+--   array(
+--       SELECT subject.label
+--       FROM subject
+--       WHERE users.id = subject.user_id
+--   ) as subjects,
+--   department.label as department,
+--   department.instructor as instructor
+--
+-- FROM users, department
+-- WHERE users.department = department.id;
