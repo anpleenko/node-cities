@@ -26,6 +26,7 @@ services:
     volumes:
       - ./db_data:/var/lib/postgresql/data
       - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
 
 volumes:
   cities_db:

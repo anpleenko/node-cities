@@ -1,5 +1,7 @@
 default: _requirements _settings db test end
 
+req: _requirements
+
 _requirements: node_packages docker_images
 
 node_packages:
