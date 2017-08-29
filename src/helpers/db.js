@@ -19,7 +19,4 @@ const pgp = require('pg-promise')(options);
 
 const db = pgp(process.env.DATABASE_URL);
 
-module.exports = {
-  db,
-  sdadsd: 'qweqwe',
-};
+module.exports = db;
