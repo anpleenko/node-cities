@@ -11,6 +11,16 @@ router.get('/api/countries', db.getAllCountries);
 router.get('/api/countries/:id', db.getSingleCountry);
 
 router.get('/api/cities', db.getAllCities);
+router.get('/api/demo', (req, res, next) => {
+  res.json({
+    ID: null,
+    name: 'Doe',
+    'first-name': 'John',
+    age: 25,
+    hobbies: ['reading', 'cinema', { sports: ['volley-ball', 'badminton'] }],
+    address: {},
+  });
+});
 router.get('/api/cities/:id', db.getSingleCity);
 
 router.post('/api/puppies', db.createPuppy);
