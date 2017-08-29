@@ -1,16 +1,22 @@
 const express = require('express');
+const city = require('../queries/cityQueries');
+const students = require('../queries/studentsQueries');
+const puppy = require('../queries/puppyQueries');
 
 const router = express.Router();
-const db = require('./queries');
 
 router.get('/', (req, res) => {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/api/countries', db.getAllCountries);
-router.get('/api/countries/:id', db.getSingleCountry);
+router.get('/api/countries', city.getAllCountries);
+router.get('/api/countries/:id', city.getSingleCountry);
 
-router.get('/api/cities', db.getAllCities);
+router.get('/api/cities', city.getAllCities);
+router.get('/api/cities/:id', city.getSingleCity);
+
+router.get('/api/students', students.getOllStudents);
+
 router.get('/api/demo', (req, res, next) => {
   res.json({
     ID: null,
@@ -21,10 +27,9 @@ router.get('/api/demo', (req, res, next) => {
     address: {},
   });
 });
-router.get('/api/cities/:id', db.getSingleCity);
 
-router.post('/api/puppies', db.createPuppy);
-router.put('/api/puppies/:id', db.updatePuppy);
-router.delete('/api/puppies/:id', db.removePuppy);
+router.post('/api/puppes', puppy.createPuppy);
+router.put('/api/puppes/:id', puppy.updatePuppy);
+router.delete('/api/puppes/:id', puppy.removePuppy);
 
 module.exports = router;

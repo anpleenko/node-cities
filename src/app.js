@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 
 // development error handler
 // will print stacktrace
-if (process.env.NODE_ENV == 'development') {
+if (process.env.NODE_ENV === 'development') {
   app.use((err, req, res, next) => {
     res.status(err.code || 500)
       .json({
