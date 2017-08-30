@@ -1,4 +1,4 @@
-const db = require('../helpers/db');
+const db = require('../db');
 
 // add query functions
 function getAllCountries(req, res, next) {

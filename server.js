@@ -25,8 +25,13 @@ app.listen(port, (error) => {
 });
 
 // https://habrahabr.ru/post/329942/#comment_10244722
-process.on('unhandledRejection', (err) => {
-  console.error('uncaughtException:', err.message);
-  console.error(err.stack);
-  process.exit(1);
-});
+// process.on('unhandledRejection', (err) => {
+//   console.error('uncaughtException:', err.message);
+//   console.error(err.stack);
+//   process.exit(1);
+// });
+
+process.on('exit', () => {console.log('process.on.exit')});
+process.on('SIGINT', () => {console.log('process.on.SIGINT')});
+process.on('SIGTERM', () => {console.log('process.on.SIGTERM')});
+process.on('uncaughtException', () => {console.log('process.on.uncaughtException')});

@@ -1,4 +1,4 @@
-const db = require('../helpers/db');
+const db = require('../db');
 
 function getOllStudents(req, res, next) {
   db.any(`

@@ -1,4 +1,4 @@
-const db = require('../helpers/db');
+const db = require('../db');
 
 function getSinglePuppy(req, res, next) {
   const pupID = parseInt(req.params.id, 10);
