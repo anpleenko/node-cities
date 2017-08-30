@@ -14,7 +14,7 @@ services:
     ports:
       - "3000:3000"
     working_dir: /usr/src/app
-    command: ./node_modules/.bin/nodemon server
+    command: make run_api_container
 
   cities_db:
     container_name: cities_db
@@ -26,8 +26,6 @@ services:
       POSTGRES_DB: postgres
     volumes:
       - ./db_data:/var/lib/postgresql/data
-      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
-      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
 
 volumes:
   cities_db:

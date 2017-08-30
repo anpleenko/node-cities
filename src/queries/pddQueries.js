@@ -1,7 +1,7 @@
 const db = require('../db');
 
 function getOllPdd(req, res, next) {
-  db.any(`
+  db.one(`
     SELECT
       new_pdd_with_changed.logo as logo,
       new_pdd_with_changed.title as title,

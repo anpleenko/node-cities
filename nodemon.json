@@ -1,7 +1,7 @@
 {
   "restartable": "r",
   "ignore": [
-    "db"
+    "db_data/"
   ],
   "verbose": true,
   "env": {

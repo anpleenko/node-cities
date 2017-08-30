@@ -49,4 +49,10 @@ del:
 	git remote add origin git@github.com:vaeum/node-cities.git
 	git push -u -f origin --all
 
+run_api_container:
+	sleep 5s
+	node node_modules/db-migrate/bin/db-migrate down --count 30
+	node node_modules/db-migrate/bin/db-migrate up
+	./node_modules/.bin/nodemon server
+
 .PHONY: db test
