@@ -1,3 +1,10 @@
+DROP TABLE IF EXISTS pdd;
+DROP TABLE IF EXISTS pdd_text;
+DROP TABLE IF EXISTS pdd_category;
+
+DROP SEQUENCE IF EXISTS pdd_category_ids;
+DROP SEQUENCE IF EXISTS pdd_text_ids;
+
 CREATE TABLE pdd
 (
   logo text,

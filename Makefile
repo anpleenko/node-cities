@@ -51,8 +51,12 @@ del:
 
 run_api_container:
 	sleep 5s
-	node node_modules/db-migrate/bin/db-migrate down --count 30
-	node node_modules/db-migrate/bin/db-migrate up
+	node tools/db_clean
 	./node_modules/.bin/nodemon server
+
+run_api_container_prod:
+	sleep 5s
+	node tools/db_clean
+	node server
 
 .PHONY: db test
