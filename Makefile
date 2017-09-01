@@ -20,7 +20,7 @@ _settings:
 
 db:
 	@echo "==> Download dump file"
-	curl https://raw.githubusercontent.com/Legostaev/contry_region_city/master/script.sql --output dump.sql
+	# curl https://raw.githubusercontent.com/Legostaev/contry_region_city/master/script.sql --output dump.sql
 
 test:
 
