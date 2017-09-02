@@ -3,6 +3,7 @@ const city = require('../queries/cityQueries');
 const students = require('../queries/studentsQueries');
 const pdd = require('../queries/pddQueries');
 const puppy = require('../queries/puppyQueries');
+const bookmarks = require('../queries/bookmarksQueries');
 
 const router = express.Router();
 
@@ -18,6 +19,9 @@ router.get('/api/cities/:id', city.getSingleCity);
 
 router.get('/api/students', students.getOllStudents);
 router.get('/api/pdd', pdd.getOllPdd);
+
+router.get('/api/bookmarks', bookmarks.getAllBookmarks);
+router.get('/api/bookmarks/menu', bookmarks.getAllBookmarksMenu);
 
 router.get('/api/demo', (req, res, next) => {
   res.json({
