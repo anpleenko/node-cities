@@ -32,7 +32,7 @@ run:
 
 deploy:
 	ssh qa@178.76.235.82 ' \
-		cd /home/qa/cities; \
+		cd /home/qa/node/cities; \
 		git stash -u; \
 		git pull; \
 		make node_packages; \
