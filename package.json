@@ -5,23 +5,23 @@
     "start": "node server"
   },
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^7.2.3",
-    "bluebird": "^3.5.0",
-    "body-parser": "~1.17.1",
+    "babel-cli": "6.26.0",
+    "babel-eslint": "7.2.3",
+    "bluebird": "3.5.0",
+    "body-parser": "1.18.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
-    "fs-readfile-promise": "^3.0.0",
+    "fs-readfile-promise": "3.0.0",
     "morgan": "~1.8.1",
-    "node-env-file": "^0.1.8",
-    "nodemon": "^1.11.0",
-    "pg-promise": "^5.9.7",
-    "pug": "^2.0.0-rc.3",
-    "serve-favicon": "~2.4.2"
+    "node-env-file": "0.1.8",
+    "nodemon": "1.12.1",
+    "pg-promise": "5.9.7",
+    "pug": "2.0.0-rc.3",
+    "serve-favicon": "2.4.4"
   },
   "devDependencies": {
-    "eslint": "^4.5.0",
-    "eslint-config-node": "^1.6.0"
+    "eslint": "4.7.0",
+    "eslint-config-node": "1.6.0"
   }
 }
