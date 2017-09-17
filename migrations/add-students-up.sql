@@ -9,7 +9,7 @@ DROP SEQUENCE IF EXISTS subject_ids;
 CREATE SEQUENCE department_ids;
 CREATE TABLE department (
     id INTEGER PRIMARY KEY DEFAULT NEXTVAL('department_ids'),
-    label	character varying(128) not null,
+    label character varying(128) not null,
     instructor character varying(128) not null
 );
 

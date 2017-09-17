@@ -5,8 +5,7 @@ DROP TABLE IF EXISTS new_pdd_category;
 DROP SEQUENCE IF EXISTS new_pdd_text_ids;
 DROP SEQUENCE IF EXISTS new_pdd_category_ids;
 
-CREATE TABLE new_pdd
-(
+CREATE TABLE new_pdd (
   logo text,
   title text
 );
@@ -20,8 +19,7 @@ VALUES (
 -- -- -- -- -- -- -- -- -- --
 
 CREATE SEQUENCE new_pdd_category_ids;
-CREATE TABLE new_pdd_category
-(
+CREATE TABLE new_pdd_category (
   id INTEGER PRIMARY KEY DEFAULT NEXTVAL('new_pdd_category_ids'),
   title text
 );
