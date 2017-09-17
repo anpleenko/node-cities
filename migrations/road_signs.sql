@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS road_signs_category;
 DROP TABLE IF EXISTS road_signs_items;
+DROP TABLE IF EXISTS road_signs_category;
 
 -- -- -- -- -- -- -- -- -- -- --
 
