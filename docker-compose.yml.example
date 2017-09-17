@@ -19,10 +19,9 @@ services:
   cities_db:
     container_name: cities_db
     image: postgres:9
-    user: postgres
     environment:
       POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
+      POSTGRES_USER: root
       POSTGRES_DB: postgres
     volumes:
       - ./db_data:/var/lib/postgresql/data
