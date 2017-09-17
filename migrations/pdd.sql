@@ -5,8 +5,7 @@ DROP TABLE IF EXISTS pdd_category;
 DROP SEQUENCE IF EXISTS pdd_category_ids;
 DROP SEQUENCE IF EXISTS pdd_text_ids;
 
-CREATE TABLE pdd
-(
+CREATE TABLE pdd(
   logo text,
   title text
 );
@@ -20,28 +19,43 @@ VALUES (
 -- -- -- -- -- -- -- -- -- --
 
 CREATE SEQUENCE pdd_category_ids;
-CREATE TABLE pdd_category
-(
+CREATE TABLE pdd_category(
   id INTEGER PRIMARY KEY DEFAULT NEXTVAL('pdd_category_ids'),
   title text
 );
 
 -- -- -- -- -- -- -- -- -- --
 
-INSERT INTO pdd_category(title)
-VALUES ('Изменение правил в пункте 1.1');
-
-INSERT INTO pdd_category(title)
-VALUES ('Изменение правил в пункте 1.2');
-
-INSERT INTO pdd_category(title)
-VALUES ('Изменение правил в пункте 1.3');
+INSERT INTO pdd_category(title) VALUES ('Общие положения');
+INSERT INTO pdd_category(title) VALUES ('Общие обязанности водителей');
+INSERT INTO pdd_category(title) VALUES ('Применение специальных сигналов');
+INSERT INTO pdd_category(title) VALUES ('Обязанности пешеходов');
+INSERT INTO pdd_category(title) VALUES ('Обязанности пассажиров');
+INSERT INTO pdd_category(title) VALUES ('Сигналы светофора и регулировщика');
+INSERT INTO pdd_category(title) VALUES ('Применение аварийной сигнализации и знака аварийной остановки');
+INSERT INTO pdd_category(title) VALUES ('Начало движения, маневрирование');
+INSERT INTO pdd_category(title) VALUES ('Расположение транспортных средств на проезжей части');
+INSERT INTO pdd_category(title) VALUES ('Скорость движения');
+INSERT INTO pdd_category(title) VALUES ('Обгон, опережение, встречный разъезд');
+INSERT INTO pdd_category(title) VALUES ('Остановка и стоянка');
+INSERT INTO pdd_category(title) VALUES ('Проезд перекрестков');
+INSERT INTO pdd_category(title) VALUES ('Пешеходные переходы и места остановок маршрутных транспортных средств');
+INSERT INTO pdd_category(title) VALUES ('Движение через железнодорожные пути');
+INSERT INTO pdd_category(title) VALUES ('Движение по автомагистралям');
+INSERT INTO pdd_category(title) VALUES ('Движение в жилых зонах');
+INSERT INTO pdd_category(title) VALUES ('Приоритет маршрутных транспортных средств');
+INSERT INTO pdd_category(title) VALUES ('Пользование внешними световыми приборами и звуковыми сигналами');
+INSERT INTO pdd_category(title) VALUES ('Буксировка механических транспортных средств');
+INSERT INTO pdd_category(title) VALUES ('Учебная езда');
+INSERT INTO pdd_category(title) VALUES ('Перевозка людей');
+INSERT INTO pdd_category(title) VALUES ('Перевозка грузов');
+INSERT INTO pdd_category(title) VALUES ('Дополнительные требования к движению велосипедистов и водителей мопедов');
+INSERT INTO pdd_category(title) VALUES ('Дополнительные требования к движению гужевых повозок, а также к прогону животных');
 
 -- -- -- -- -- -- -- -- -- --
 
 CREATE SEQUENCE pdd_text_ids;
-CREATE TABLE pdd_text
-(
+CREATE TABLE pdd_text(
   id INTEGER DEFAULT NEXTVAL('pdd_text_ids'),
   category_id INTEGER not null REFERENCES pdd_category (id),
   text text
