@@ -24,34 +24,34 @@ const getOllPdd = async (req, res, next) => {
         new_pdd
     `);
 
-    res.send(newPdd);
+    // res.send(newPdd);
 
-    // const pdd = await db.one(`
-    //   SELECT
-    //     pdd.logo as logo,
-    //     pdd.title as title,
-    //     ARRAY (
-    //       SELECT json_build_object('category', category, 'text', text) as friends
-    //       FROM (
-    //         SELECT
-    //           pdd_category.title as category,
-    //           pdd_text.text as text
+    const pdd = await db.one(`
+      SELECT
+        pdd.logo as logo,
+        pdd.title as title,
+        ARRAY (
+          SELECT json_build_object('category', category, 'text', text) as friends
+          FROM (
+            SELECT
+              pdd_category.title as category,
+              pdd_text.text as text
 
-    //         FROM pdd_category
+            FROM pdd_category
 
-    //         INNER JOIN pdd_text
-    //           ON pdd_text.category_id = pdd_category.id
-    //       ) as data
-    //     ) as items
+            INNER JOIN pdd_text
+              ON pdd_text.category_id = pdd_category.id
+          ) as data
+        ) as items
 
-    //   FROM
-    //     pdd
-    // `);
+      FROM
+        pdd
+    `);
 
-    // res.send({
-    //   new_pdd: newPdd,
-    //   pdd,
-    // })
+    res.send({
+      new_pdd: newPdd,
+      pdd,
+    })
   } catch (err) {
     res.send(err);
   }
