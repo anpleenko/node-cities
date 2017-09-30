@@ -28,8 +28,6 @@ const getOllPdd = async (req, res, next) => {
 
     const pdd = await db.one(`
       SELECT
-        pdd.logo as logo,
-        pdd.title as title,
         ARRAY (
           SELECT json_build_object('category', category, 'text', text) as friends
           FROM (
@@ -48,9 +46,20 @@ const getOllPdd = async (req, res, next) => {
         pdd
     `);
 
+    const pddCategory = await db.one(`
+      SELECT
+        ARRAY (
+          SELECT pdd_category.title
+          FROM pdd_category
+        ) as categories
+
+      FROM
+        pdd
+    `)
+
     res.send({
       new_pdd: newPdd,
-      pdd,
+      pdd: { ...pdd, ...pddCategory },
     })
   } catch (err) {
     res.send(err);
