@@ -67,16 +67,74 @@ INSERT INTO pdd_text(category_id, text)
 VALUES (1, 'Первая правка 1.0');
 
 INSERT INTO pdd_text(category_id, text)
-VALUES (1, 'Первая правка 1.1');
-
-INSERT INTO pdd_text(category_id, text)
 VALUES (2, 'Вторая правка 2.0');
-
-INSERT INTO pdd_text(category_id, text)
-VALUES (2, 'Вторая правка 2.1');
 
 INSERT INTO pdd_text(category_id, text)
 VALUES (3, 'Третья правка 3.0');
 
 INSERT INTO pdd_text(category_id, text)
-VALUES (3, 'Третья правка 3.1');
+VALUES (4, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (5, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (6, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (7, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (8, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (9, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (10, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (11, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (12, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (13, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (14, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (15, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (16, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (17, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (18, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (19, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (20, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (21, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (22, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (23, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (24, 'Третья правка 3.0');
+
+INSERT INTO pdd_text(category_id, text)
+VALUES (25, 'Третья правка 3.0');
+
