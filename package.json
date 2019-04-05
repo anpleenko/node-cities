@@ -8,17 +8,17 @@
     "babel-cli": "6.26.0",
     "babel-eslint": "7.2.3",
     "bluebird": "3.5.0",
-    "body-parser": "1.18.1",
+    "body-parser": "1.18.2",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "express": "~4.15.2",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
     "fs-readfile-promise": "3.0.0",
-    "morgan": "~1.8.1",
+    "morgan": "~1.9.1",
     "node-env-file": "0.1.8",
     "nodemon": "1.14.11",
     "pg-promise": "^6.7.0",
-    "pug": "2.0.0-rc.3",
-    "serve-favicon": "2.4.4"
+    "pug": "2.0.0",
+    "serve-favicon": "2.4.5"
   },
   "devDependencies": {
     "eslint": "4.7.0",
