@@ -18,7 +18,7 @@
     "nodemon": "1.14.11",
     "pg-promise": "^6.7.0",
     "pug": "2.0.4",
-    "serve-favicon": "2.4.4"
+    "serve-favicon": "2.4.5"
   },
   "devDependencies": {
     "eslint": "4.18.2",
