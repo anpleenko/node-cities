@@ -2,14 +2,16 @@
   "name": "node-cities",
   "version": "1.0.0",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "babel-cli": "6.26.0",
     "babel-eslint": "7.2.3",
     "bluebird": "3.5.0",
     "body-parser": "1.18.1",
-    "cookie-parser": "~1.4.4",
+    "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "fs-readfile-promise": "3.0.0",
@@ -18,10 +20,12 @@
     "nodemon": "1.14.11",
     "pg-promise": "^6.7.0",
     "pug": "2.0.0-rc.3",
-    "serve-favicon": "2.4.4"
+    "serve-favicon": "2.4.4",
+    "snyk": "^1.298.1"
   },
   "devDependencies": {
     "eslint": "4.7.0",
     "eslint-config-node": "1.6.0"
-  }
+  },
+  "snyk": true
 }
