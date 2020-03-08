@@ -9,7 +9,7 @@
     "babel-eslint": "7.2.3",
     "bluebird": "3.5.0",
     "body-parser": "1.18.1",
-    "cookie-parser": "~1.4.3",
+    "cookie-parser": "~1.4.4",
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "fs-readfile-promise": "3.0.0",
