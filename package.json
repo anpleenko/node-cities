@@ -15,7 +15,7 @@
     "fs-readfile-promise": "3.0.1",
     "morgan": "~1.9.1",
     "node-env-file": "0.1.8",
-    "nodemon": "1.14.11",
+    "nodemon": "2.0.2",
     "pg-promise": "^6.7.0",
     "pug": "2.0.4",
     "serve-favicon": "2.5.0"
