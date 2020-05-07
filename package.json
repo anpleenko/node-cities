@@ -16,7 +16,7 @@
     "morgan": "~1.9.1",
     "node-env-file": "0.1.8",
     "nodemon": "2.0.2",
-    "pg-promise": "^6.7.0",
+    "pg-promise": "^10.5.3",
     "pug": "2.0.4",
     "serve-favicon": "2.5.0"
   },
